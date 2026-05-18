@@ -222,23 +222,23 @@
 		makefolder(library.directory .. path)
 	end 
 
-	writefile("ffff.ttf", game:HttpGet("https://github.com/i77lhm/storage/raw/refs/heads/main/fonts/ProggyClean.ttf"))
+	writefile("ProggyClean.ttf", game:HttpGet("https://github.com/i77lhm/storage/raw/refs/heads/main/fonts/ProggyClean.ttf"))
 
-	local tahoma = {
-		name = "SmallestPixel7",
-		faces = {
-			{
-				name = "Regular",
-				weight = 400,
-				style = "normal",
-				assetId = getcustomasset("ffff.ttf")
-			}
-		}
+	local fontDefinition = {
+	    name = "ProggyClean",
+	    faces = {
+	        {
+	            name = "Regular",
+	            weight = 400,
+	            style = "normal",
+	            assetId = getcustomasset("ProggyClean.ttf")
+	        }
+	    }
 	}
 
-	writefile("dddd.ttf", http_service:JSONEncode(tahoma))
+	writefile("ProggyClean.font", http_service:JSONEncode(fontDefinition))
 
-	library.font = Font.new(getcustomasset("dddd.ttf"), Enum.FontWeight.Regular)
+	library.font = Font.new(getcustomasset("ProggyClean.font"), Enum.FontWeight.Regular)
 
 	local config_holder 
 -- 
