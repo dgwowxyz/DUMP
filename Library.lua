@@ -69,7 +69,7 @@ local concat = table.concat
 
 -- library init
 local library = {
-    directory = "Atlanta",
+    directory = "Lunarcore",
     folders = {
         "/fonts",
         "/configs",
@@ -1292,7 +1292,7 @@ function library:window(properties)
         Visible = true,
         BorderColor3 = rgb(0, 0, 0),
         AnchorPoint = vec2(0.5, 1),
-        Position = dim2(0.5, 0, 1, -24),
+        Position = dim2(0.5, 0, 1, -39),
         Size = dim2(0, 135, 0, 39),
         BorderSizePixel = 0,
         BackgroundColor3 = themes.preset.outline
@@ -1541,7 +1541,7 @@ function library:window(properties)
 
     -- main window
     local main_window = library:panel({
-        name = properties and properties.name or "Atlanta | ",
+        name = properties and properties.name or "Lunarcore | ",
         size = dim2(0, 604, 0, 628),
         position = dim2(0, (camera.ViewportSize.X / 2) - 302 - 96, 0, (camera.ViewportSize.Y / 2) - 421 - 12),
         image = "rbxassetid://98823308062942",
@@ -1648,11 +1648,11 @@ function library:window(properties)
         image = "rbxassetid://115194686863276",
     })
 
-    local watermark = library:watermark({ default = os.date('Atlanta |  - %b %d %Y - %H:%M:%S') })
+    local watermark = library:watermark({ default = os.date('Lunarcore |  - %b %d %Y - %H:%M:%S') })
 
     task.spawn(function()
         while task.wait(1) do
-            watermark.change_text(os.date('Atlanta - Beta - %b %d %Y - %H:%M:%S'))
+            watermark.change_text(os.date('Lunarcore - Beta - %b %d %Y - %H:%M:%S'))
         end
     end)
 
@@ -1936,8 +1936,8 @@ function library:watermark(options)
         Parent = sgui,
         Name = "",
         BorderColor3 = rgb(0, 0, 0),
-        AnchorPoint = vec2(1, 1),
-        Position = dim2(1, -20, 0, 20),
+        AnchorPoint = vec2(0.5, 1),
+        Position = dim2(0.5, 0, 0, 20),
         Size = dim2(0, 0, 0, 24),
         BorderSizePixel = 0,
         AutomaticSize = Enum.AutomaticSize.X,
