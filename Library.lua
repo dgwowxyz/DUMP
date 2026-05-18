@@ -1244,12 +1244,6 @@ function library:window(properties)
     local window = { opened = true }
     local opened = {}
     local dock_outline;
-    local blur = library:create("BlurEffect", {
-        Parent = lighting,
-        Enabled = true,
-        Size = 15
-    });
-
     library.cache = library:create("ScreenGui", {
         Enabled = false,
         Parent = gethui(),
@@ -1272,8 +1266,6 @@ function library:window(properties)
                 end
             end
         end
-
-        library:tween(blur, { Size = bool and (flags["Blur Size"] or 15) or 0 })
 
         dock_outline.Visible = bool;
 
@@ -1299,8 +1291,8 @@ function library:window(properties)
         Name = "",
         Visible = true,
         BorderColor3 = rgb(0, 0, 0),
-        AnchorPoint = vec2(0.5, 0),
-        Position = dim2(0.5, 0, 0, 20),
+        AnchorPoint = vec2(0.5, 1),
+        Position = dim2(0.5, 0, 1, -20),
         Size = dim2(0, 135, 0, 39),
         BorderSizePixel = 0,
         BackgroundColor3 = themes.preset.outline
@@ -1760,7 +1752,6 @@ function library:window(properties)
         interval = 1,
         callback = function(int)
             if window.opened then
-                blur.Size = int
             end
         end
     })
@@ -1903,7 +1894,6 @@ function library:window(properties)
                 connection:Disconnect()
             end
 
-            blur:Destroy()
         end
     })
     --
