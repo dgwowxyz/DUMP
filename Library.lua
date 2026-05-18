@@ -1299,7 +1299,7 @@ function library:window(properties)
     });
 
     library:apply_theme(dock_outline, "outline", "BackgroundColor3");
-    dock_outline.Position = dim2(0, (camera.ViewportSize.X - 135) / 2, 0, camera.ViewportSize.Y - 78);
+    dock_outline.Position = dim2(0, dock_outline.AbsolutePosition.X, 0, dock_outline.AbsolutePosition.Y);
     dock_outline.AnchorPoint = vec2(0, 0);
     library:draggify(dock_outline);
 
