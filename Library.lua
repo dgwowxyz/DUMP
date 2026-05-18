@@ -1292,7 +1292,7 @@ function library:window(properties)
         Visible = true,
         BorderColor3 = rgb(0, 0, 0),
         AnchorPoint = vec2(0.5, 1),
-        Position = dim2(0.5, 0, 1, -20),
+        Position = dim2(0.5, 0, 1, -24),
         Size = dim2(0, 135, 0, 39),
         BorderSizePixel = 0,
         BackgroundColor3 = themes.preset.outline
