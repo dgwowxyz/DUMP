@@ -1756,6 +1756,7 @@ function library:window(properties)
     section:toggle({
         name = "Watermark",
         flag = "watermark",
+        default = true,
         callback = function(bool)
             watermark.set_visible(bool)
         end
