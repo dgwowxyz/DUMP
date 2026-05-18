@@ -1299,7 +1299,7 @@ function library:window(properties)
     });
 
     library:apply_theme(dock_outline, "outline", "BackgroundColor3");
-    dock_outline.Position = dim2(0, dock_outline.AbsolutePosition.X, 0, dock_outline.AbsolutePosition.Y);
+    dock_outline.Position = dim2(0, (camera.ViewportSize.X - 135) / 2, 0, camera.ViewportSize.Y - 78);
     dock_outline.AnchorPoint = vec2(0, 0);
     library:draggify(dock_outline);
 
@@ -1743,18 +1743,6 @@ function library:window(properties)
             end,
             flag = "Glow"
         })
-    section:slider({
-        name = "Blur Size",
-        flag = "Blur Size",
-        min = 0,
-        max = 56,
-        default = 15,
-        interval = 1,
-        callback = function(int)
-            if window.opened then
-            end
-        end
-    })
     local section = column:section({ name = "Other" })
     section:label({ name = "UI Bind" })
         :keybind({ callback = window.set_menu_visibility, key = Enum.KeyCode.Insert })
